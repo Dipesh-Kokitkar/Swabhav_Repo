@@ -4,9 +4,13 @@ public class TestArguments {
 
 	public static void main(String[] args) {
 		
-		System.out.println(args.length);
-		System.out.println(args[0]);
-		System.out.println(args[1]);
+		if(args.length==0){
+		System.out.println("Thank You!");
+		}
+		else{
+			for(int i=0;i<args.length;i++)
+				System.out.print("Hello "+args[i]+" ");
+		}
 	}
 
 }

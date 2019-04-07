@@ -1,0 +1,17 @@
+1.Create new folder and make it repo -->>git init
+2.open notepad -->> git notepad hello.txt
+3.for Checking logs-->>git log
+4.For checking status -->> git status
+5.For adding shnapshot -->> git add .(. means current directory)
+
+6.For commit -->>git commit -m "(any msg)"
+(before that make sure you register first) 
+
+7.For checkout files -->> git checkout <hashcode>
+8.for adding url >> git remote add <any short name> <url of github >
+
+9.for checking registed urls --->> git remote -v
+
+10. for pushing files to repo--> git push <name url> <branch name>
+
+

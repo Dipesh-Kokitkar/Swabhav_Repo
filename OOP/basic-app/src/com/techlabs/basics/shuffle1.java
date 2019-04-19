@@ -1,3 +1,4 @@
+package com.techlabs.basics;
 class shuffle1{
   public static void main(String arg[]){
 	  int x=3;

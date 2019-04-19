@@ -1,3 +1,4 @@
+package com.techlabs.basics;
 class TestArrays{
 	
 	public static void main(String arg[]){

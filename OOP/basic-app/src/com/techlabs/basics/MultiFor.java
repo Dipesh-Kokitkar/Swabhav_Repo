@@ -1,3 +1,4 @@
+package com.techlabs.basics;
 class MultiFor{
    public static void main(String arg[]){   
 	   for(int x=0;x<4;x++){

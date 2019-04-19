@@ -1,3 +1,4 @@
+package com.techlabs.basics;
 class DrumKit{
 	
 	boolean topHat=true;

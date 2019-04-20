@@ -12,6 +12,6 @@
 
 9.for checking registed urls --->> git remote -v
 
-10. for pushing files to repo--> git push <name url> <branch name>
+10. for pushing files to repo--> git push <name url> <branch name>(master)
 
 

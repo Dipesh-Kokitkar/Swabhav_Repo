@@ -1,0 +1,17 @@
+package com.techlabs.basics;
+
+public class Assignment2 {
+
+	public static void main(String[] args) {
+		String url="www.aurionpro.com?developer=dipesh&loction=rabale";
+		
+		String[] s1=url.split("\\.");
+		
+		for(int i=0;i<s.length;i++){
+			System.out.print(s[i]+"\t");
+		}
+
+	}
+
+}
+

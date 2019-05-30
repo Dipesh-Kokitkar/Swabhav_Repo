@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RectangleNewApp
 {
@@ -18,8 +16,8 @@ namespace RectangleNewApp
             big.SetWidth(155);
 
             Console.WriteLine("For Rectangle 1:");
-            Console.WriteLine("Height:"+small.GetHeight()+"\nWidth:"+small.GetWidth());
-            Console.WriteLine("Area:"+small.AreaCalulatation());
+            Console.WriteLine("Height:" + small.GetHeight() + "\nWidth:" + small.GetWidth());
+            Console.WriteLine("Area:" + small.AreaCalulatation());
 
             Console.WriteLine("For Rectangle 2:");
             Console.WriteLine("Height:" + big.GetHeight() + "\nWidth:" + big.GetWidth());

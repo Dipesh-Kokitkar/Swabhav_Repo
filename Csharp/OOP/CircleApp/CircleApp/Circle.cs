@@ -7,6 +7,11 @@ namespace CircleApp
         private float _radius;
         private const float PI = 3.14f;
 
+        public Circle() { }
+        public Circle(float radius) {
+            _radius = radius;
+        }
+
         public float Radius
         {
             get { return _radius; }

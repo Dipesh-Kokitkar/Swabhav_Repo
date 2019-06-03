@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CircleApp
 {
@@ -8,9 +6,16 @@ namespace CircleApp
     {
         static void PrintInfo(Circle c)
         {
-            Console.WriteLine("Radius:"+c.Radius+"\nArea:"+c.CalArea());
+            Console.WriteLine("Radius:" + c.Radius + "\nArea:" + c.CalArea());
         }
         static void Main(string[] args)
+        {
+            // CaseStd1();
+            PrintInfo(new Circle());
+            PrintInfo(new Circle(4.5f));
+        }
+
+        private static void CaseStd1()
         {
             Circle small = new Circle();
             Circle big = new Circle();
@@ -25,8 +30,8 @@ namespace CircleApp
             Console.WriteLine("Radius:" + big.Radius + "\nArea:" + big.CalArea());
 
             Circle temp = small;
-            Console.WriteLine("temp radius:"+temp.Radius);
-            Console.WriteLine("SMall radius:"+small.Radius);
+            Console.WriteLine("temp radius:" + temp.Radius);
+            Console.WriteLine("SMall radius:" + small.Radius);
 
             temp.Radius = 1.1f;
             Console.WriteLine("temp radius:" + temp.Radius);

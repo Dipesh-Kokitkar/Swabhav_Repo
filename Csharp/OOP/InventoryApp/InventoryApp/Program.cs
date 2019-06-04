@@ -16,10 +16,11 @@ namespace InventoryApp
                 Console.WriteLine("Erin,you might like these guitars:");
                 foreach (Guitar guitar in matchingGuitars) {
                     GuitarSpec spec = guitar.GetSpec();
-                    Console.WriteLine("We have a "+spec.GetBuilder()+" "+spec.GetModel()+" "+spec.Getnumstring() +" String "+
-                        spec.Gettype()+" guitar:\n    "+
-                        spec.GetBackwood()+" back and sides,\n    "+
-                        spec.GetTopwood()+" top. \n You cac have it for only $"+
+                    ConvertToString c = new ConvertToString();
+                    Console.WriteLine("\nWe have a "+c.BuilderToString(spec.GetBuilder())+" "+spec.GetModel()+" "+spec.Getnumstring() +" String "+
+                        c.TypeToString(spec.Gettype())+" guitar:\n    "+
+                        c.WoodToString(spec.GetBackwood())+" back and sides,\n    "+
+                        c.WoodToString(spec.GetTopwood())+" top. \n You cac have it for only $"+
                         guitar.GetPrice()+"!\n  ----");
                 }
             }

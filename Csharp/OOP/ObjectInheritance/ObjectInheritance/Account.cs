@@ -63,5 +63,14 @@ namespace AccountApp.Business
             return base.ToString()+"\nAccountNo:"+this.Accountno+"\nName:"+this.Name+"\nBalance:"+this.Balance;
         }
 
+        public override bool Equals(object obj)
+        {
+            Account account = (Account)obj;
+            if (_accountno == account.Accountno && _name.Equals(account.Name) && _balance == account.Balance)
+                return true;
+            //return base.Equals(obj);
+            return false;
+        }
+
     }
 }

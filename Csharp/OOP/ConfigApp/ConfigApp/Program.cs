@@ -12,8 +12,10 @@ namespace ConfigApp
             string username = ConfigurationSettings.AppSettings["username"].ToString();
             string password = ConfigurationSettings.AppSettings["password"].ToString();
             string database = ConfigurationSettings.AppSettings["database"].ToString();
+            //string database2=
 
-            Console.WriteLine("Server:"+server+"\nPort:"+port+"\nUsername:"+username+"\nPassword:"+password+"\nDatabase:"+database);
+            Console.WriteLine("Server:"+server+"\nPort:"+port+"\nUsername:"+username+"\nPassword:"+password+
+                              "\nDatabase:"+database);
         }
     }
 }

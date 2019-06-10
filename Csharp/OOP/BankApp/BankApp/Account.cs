@@ -8,7 +8,7 @@ namespace BankApp
         private string _name, _type;
         protected double _balance;
 
-        public Account(int accountnumber, string name, double balance, string type)
+        public Account(int accountnumber, string name, double balance,string type)
         {
             _accountnumber = accountnumber;
             _name = name;

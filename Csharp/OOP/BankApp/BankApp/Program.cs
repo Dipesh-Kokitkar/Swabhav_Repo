@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BankApp
 {
@@ -8,8 +6,8 @@ namespace BankApp
     {
         static void Main(string[] args)
         {
-            Current account1 = new Current(1001,"ABC",2000,"Current");
-            Savings account2 = new Savings(1002,"XYZ",500,"Savings");
+            Current account1 = new Current(1001,"ABC",2000);
+            Savings account2 = new Savings(1002,"XYZ",500);
 
             ShowAccountInformation(account1);
             ShowAccountInformation(account2);

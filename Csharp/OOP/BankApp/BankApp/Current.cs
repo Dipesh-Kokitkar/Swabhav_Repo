@@ -4,11 +4,12 @@ namespace BankApp
 {
     class Current:Account
     {
-        public Current(int accountnumber, string name, double balace, string type) : base(accountnumber, name
-            , balace, "Current") { }
+        public Current(int accountnumber, string name, double balance) : base(accountnumber, name
+            , balance, "Current") { }
 
         public override void Withdraw(double amount)
         {
+            //if(-5000 < )
             _balance -= amount;
         }
     }

@@ -4,12 +4,14 @@ namespace BankApp
 {
     class Savings:Account
     {
-        public Savings(int accountnumber, string name, double balance, string type) : base(accountnumber, name
-            , balance, "Saving") { }
+        private const int MINIMUMBALANCE= 1000;
+
+        public Savings(int accountnumber, string name, double balance) : base(accountnumber, name
+            , balance,"Savings") { }
 
         public override void Withdraw(double amount)
         {
-            if (_balance < 1000 && (_balance - amount) < 1000)
+            if (_balance < MINIMUMBALANCE && (_balance - amount) < MINIMUMBALANCE)
                 throw new LimitExceedException("Minimum limit exceeded!You can not withdraw amount");
             _balance -= amount;
         }

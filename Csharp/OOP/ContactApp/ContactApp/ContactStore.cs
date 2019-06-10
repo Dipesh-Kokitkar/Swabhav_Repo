@@ -1,19 +1,19 @@
 ﻿using System;
 using System.IO;
-using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 
 namespace ContactApp
 {
     class ContactStore
     {
-        private ArrayList _list;
+        private List<Contact> _list;
         public ContactStore()
         {
-            _list = new ArrayList();
+            _list = new List<Contact>();
         }
 
-        public void Serailzation(ArrayList contactlist)
+        public void Serailzation(List<Contact> contactlist)
         {
             BinaryFormatter binaryformatter = new BinaryFormatter();
             FileStream fileout = new FileStream("Contacts.binary", FileMode.Create, FileAccess.Write);
@@ -32,7 +32,7 @@ namespace ContactApp
             }
         }
 
-        public ArrayList Deserilztion()
+        public List<Contact> Deserilztion()
         {
             BinaryFormatter binaryformatter = new BinaryFormatter();
             FileStream filein = new FileStream("Contacts.binary", FileMode.Open, FileAccess.Read);
@@ -40,7 +40,7 @@ namespace ContactApp
             {
                 using (filein)
                 {
-                    _list = (ArrayList)binaryformatter.Deserialize(filein);
+                    _list = (List<Contact>)binaryformatter.Deserialize(filein);
                 }
             }
             catch (Exception e)

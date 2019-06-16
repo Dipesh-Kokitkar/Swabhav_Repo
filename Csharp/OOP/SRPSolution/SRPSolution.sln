@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRPVoilationApp", "SRPVoilationApp\SRPVoilationApp.csproj", "{9229AA1B-9D70-4603-8C16-CF8703F1C575}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRPSolution", "SRPSolution\SRPSolution.csproj", "{2CA02AB8-048A-47E9-965F-0038BF61DAA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9229AA1B-9D70-4603-8C16-CF8703F1C575}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9229AA1B-9D70-4603-8C16-CF8703F1C575}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9229AA1B-9D70-4603-8C16-CF8703F1C575}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9229AA1B-9D70-4603-8C16-CF8703F1C575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CA02AB8-048A-47E9-965F-0038BF61DAA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CA02AB8-048A-47E9-965F-0038BF61DAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CA02AB8-048A-47E9-965F-0038BF61DAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CA02AB8-048A-47E9-965F-0038BF61DAA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

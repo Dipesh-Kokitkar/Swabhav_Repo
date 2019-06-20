@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacadePatternApp", "FacadeP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPatturn", "StrategyPatturn\StrategyPatturn.csproj", "{9351CA34-D041-4335-822B-E41D2D7B5CC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompositePattern", "CompositePattern\CompositePattern.csproj", "{4DD76EF1-8D08-48BF-ACF2-2624EE4F6338}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{9351CA34-D041-4335-822B-E41D2D7B5CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9351CA34-D041-4335-822B-E41D2D7B5CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9351CA34-D041-4335-822B-E41D2D7B5CC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD76EF1-8D08-48BF-ACF2-2624EE4F6338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD76EF1-8D08-48BF-ACF2-2624EE4F6338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD76EF1-8D08-48BF-ACF2-2624EE4F6338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD76EF1-8D08-48BF-ACF2-2624EE4F6338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

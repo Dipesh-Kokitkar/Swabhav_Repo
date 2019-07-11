@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{74DFE4C5-DE84-4D7B-8951-C08C2F763C07}</ProjectGuid>
+    <ProjectGuid>{CCEF7787-7FD2-431B-B052-966B1A1990F4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TicTacToeApp</RootNamespace>
-    <AssemblyName>TicTacToeApp</AssemblyName>
+    <RootNamespace>SynchronousPatternApp</RootNamespace>
+    <AssemblyName>SynchronousPatternApp</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,17 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleFormApp.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TicTacToeLib\TicTacToeLib.csproj">
-      <Project>{bf286079-4aa8-443f-87d6-5ef0d8c6efc1}</Project>
-      <Name>TicTacToeLib</Name>
-    </ProjectReference>
+    <Compile Include="SynForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using TicTacToeLib;
 
 namespace TicTacToeApp
@@ -9,6 +10,13 @@ namespace TicTacToeApp
     class Program
     {
         static void Main(string[] args)
+        {
+            //Case1();
+            Application.EnableVisualStyles();
+            Application.Run(new ConsoleFormApp());
+        }
+
+        private static void Case1()
         {
             Player[] player = new Player[2];
             player[0] = new Player("Abc", Mark.O);
@@ -26,8 +34,9 @@ namespace TicTacToeApp
                 {
                     game.Play(cellnumber);
                 }
-                catch(Exception e) {
-                    Console.WriteLine("Message:"+e.Message);
+                catch (Exception e)
+                {
+                    Console.WriteLine("Message:" + e.Message);
                     Console.WriteLine("plz mark on empty cells");
                     continue;
                 }

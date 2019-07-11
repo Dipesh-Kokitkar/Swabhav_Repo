@@ -24,8 +24,7 @@ namespace WelcomeFormApp
             red.Text = "Red";
             red.Location = new Point(100,10);
             red.Click += CommanHandler;
-
-
+            
             Controls.Add(blue);
             Controls.Add(red);
         }

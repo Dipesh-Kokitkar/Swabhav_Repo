@@ -1,0 +1,19 @@
+<html>
+    <body class="jumbotron">
+       <p [ngStyle]="{'font-size':'30px','color':'red'}">number:{{test}}</p>
+       <p>Roll Number:{{student.rollno}}</p>
+       <p>Name:{{student.name}}</p>
+       <p [innerHTML]='student.cgpa'></p>
+       <img [src]="'assets/Koala.jpg'" height="50" width="50" alt="image"> <br>
+
+       <button (click)="loadData($event)">Display</button>
+       <div class="jumbotron">
+       <p class="life-container" *ngFor="let student of students1">
+           Roll No:{{student.rollno}}<br>
+           Name:{{student.name}} <br>
+           CGPA:{{student.cgpa}} <br>
+       </p>
+      </div>
+
+    </body>
+</html>

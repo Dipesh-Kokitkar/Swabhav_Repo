@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div> 
+        <p class="text-center">Summary Controller</p>
+        <p class="text-center">Session Counter:@Session["Counter"]</p>
+        <p  class="text-center">Application Counter:@Context.Application["Counter"]</p>
+    </div>
+</body>
+</html>

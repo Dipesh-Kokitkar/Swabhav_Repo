@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+      @{
+          var devloper = ViewBag.Message;
+          if (devloper == null) {
+              <h2>Welcome index!</h2>
+          }
+          else {
+                <h2> Welcome @devloper</h2 >
+               }
+          }
+
+       
+        
+    </div>
+</body>
+</html>

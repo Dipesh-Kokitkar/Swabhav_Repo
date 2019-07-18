@@ -15,19 +15,14 @@ namespace BankingApp2
         private LoginRespositry _login;
         private MainForm _main;
         private string _currentuser;
-        public LoginForm()
+        public LoginForm(MainForm main)
         {
             _login = new LoginRespositry();
-            _main = new MainForm();
+            _main = main;
             InitializeComponent();
-            FormClosing += LoginForm_FormClosing;
         }
 
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         private void btn_login_Click(object sender, EventArgs e)
         {
             string name = txt_name.Text;
@@ -35,9 +30,9 @@ namespace BankingApp2
             if (_login.ValidateUser(name, pwd)) {
                 MessageBox.Show("Welcome Login Sucessful", "Information", 
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //_main.SetStatus(name);
                 _currentuser = name;
-                MessageBox.Show("Message"+ParentForm);
+                MainForm.SetName(name,_main);
+                Hide();
             }
         }
 

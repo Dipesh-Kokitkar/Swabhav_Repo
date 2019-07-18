@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+@using WelcomeMVCApp.BusinessModel;
+@using WelcomeMVCApp.Models.Student;
+@model IndexViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+   <link rel="stylesheet" href="~/Content/bootstrap.css" />
+</head>
+<body class="jumbotron container">
+    <div>
+        @{
+            List<Student> studentlist = new List<Student>();
+            studentlist=(List<Student>)ViewData["StudentList"];
+         }
+        <p style="background-color:aqua">@Html.ActionLink("Register","Add","Student")</p>
+        <h4 class="jumbotron h4 text-center">TotalCount:@Model.Count</h4>
+        <div>
+            <table border="1" class="table">
+                <thead>
+                    <tr>
+                <th>Roll Number</th>
+                <th>Name</th>
+                <th>CGPA</th>
+                <th>Location</th>
+                <th>Age</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                </tr>
+                </thead>
+                @foreach (var student in Model.Students)
+                {
+                <tr>
+                    <td>@student.Rollno</td>
+                    <td>@student.Name</td>
+                    <td>@student.CGPA</td>
+                    <td>@student.Location</td>
+                    <td>@(@DateTime.Now.Year-@Convert.ToDateTime(student.Birthdate).Year)</td>
+                    <td>@Html.ActionLink("Edit","Edit","Student",new {rollno=student.Rollno},null)</td>
+                    <td>@Html.ActionLink("Delete","Delete","Student",new { rollno=student.Rollno},null)</td>
+                </tr>
+                }
+            </table>
+
+        </div> 
+    </div>
+</body>
+</html>

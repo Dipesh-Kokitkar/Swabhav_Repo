@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+@using WelcomeMVCApp.Models.Registration;
+@model IndexViewModel
+@Html.ValidationSummary(true)
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+</head>
+<body class="jumbotron container">
+    <div class="jumbotron container">
+        <p class="text-center">Registration Form</p>
+        @using (Html.BeginForm(FormMethod.Post))
+        { 
+        
+            <p>Name:@Html.TextBoxFor((model)=>model.Name)@Html.ValidationMessageFor((model)=>model.Name)</p>
+            <p>Age:@Html.TextBoxFor((model)=>model.Age)@Html.ValidationMessageFor((model) => model.Age)</p>
+            <p>Salary:@Html.TextBoxFor((model)=>model.Salary)@Html.ValidationMessageFor((model) => model.Salary)</p>
+            <p>Email:@Html.TextBoxFor((model)=>model.Email)@Html.ValidationMessageFor((model) => model.Email)</p>
+            <input type="submit" value="Register" />
+
+            <p class="text-center" style="color:green">@Model.SucessMessage</p>
+            
+        } 
+    </div>
+</body>
+</html>

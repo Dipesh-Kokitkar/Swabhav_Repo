@@ -38,7 +38,8 @@
             this.showTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btn_logout = new System.Windows.Forms.Button();
+            this.lab_inital = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,14 +67,14 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // registerToolStripMenuItem
             // 
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.registerToolStripMenuItem.Text = "Register";
             this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
             // 
@@ -120,33 +121,47 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(553, 66);
+            this.label3.Location = new System.Drawing.Point(544, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "user";
             // 
-            // label4
+            // btn_logout
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(553, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "bal";
+            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.Location = new System.Drawing.Point(530, 81);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(75, 29);
+            this.btn_logout.TabIndex = 10;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lab_inital
+            // 
+            this.lab_inital.AutoSize = true;
+            this.lab_inital.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab_inital.Location = new System.Drawing.Point(23, 193);
+            this.lab_inital.Name = "lab_inital";
+            this.lab_inital.Size = new System.Drawing.Size(598, 20);
+            this.lab_inital.TabIndex = 11;
+            this.lab_inital.Text = "Currently no user logged in .Select account Menu and Login or Register into Syste" +
+    "m";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 356);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(633, 402);
+            this.Controls.Add(this.lab_inital);
+            this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.menu);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "Bank App";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);
@@ -166,7 +181,8 @@
         private System.Windows.Forms.ToolStripMenuItem showTransactionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Label lab_inital;
     }
 }
 

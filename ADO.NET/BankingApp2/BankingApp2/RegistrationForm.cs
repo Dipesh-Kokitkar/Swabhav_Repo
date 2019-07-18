@@ -37,7 +37,7 @@ namespace BankingApp2
                     MessageBox.Show("Registration Sucessful! Plz login again", "",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Hide();
-                    LoginForm login = new LoginForm();
+                    LoginForm login = new LoginForm(null);
                     login.ShowDialog();
                     Close();
 

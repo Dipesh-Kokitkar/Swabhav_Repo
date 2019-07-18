@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+@using WelcomeMVCApp.Models.Student;
+@model AddViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+</head>
+<body>
+    <div class="jumbotron container"> 
+        <h3 class="jumbotron h3 text-center">Registration Form</h3>
+        <p style="color:red">@Model.Error</p>
+        <div class="jumbotron container">
+            @using (Html.BeginForm(FormMethod.Post)) {
+                <p>Roll Number:@Html.TextBoxFor((model)=>model.StudentRollno)</p>
+                <p>Name:@Html.TextBoxFor((model)=>model.StudentName)</p>
+                <p>Date of Birth:@Html.TextBoxFor((model)=>model.StudentDOB)</p>
+                <p>CGPA:@Html.TextBoxFor((model)=>model.StudentCGPA)</p>
+                <p>Location:@Html.TextBoxFor((model)=>model.StudentLocation)</p>
+                <input type="submit" value="Add"/>
+            }
+        </div>
+    </div>
+</body>
+</html>

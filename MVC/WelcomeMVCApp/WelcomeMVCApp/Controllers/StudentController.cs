@@ -30,6 +30,10 @@ namespace WelcomeMVCApp.Controllers
         public ActionResult Add()
         {
             AddViewModel addmodel = new AddViewModel();
+            bool isloggedin =Convert.ToBoolean(Session["Isloggedin"]);
+            if (!isloggedin) {
+                return RedirectToAction("Index","Login");
+            }
             return View(addmodel);
         }
 
@@ -51,6 +55,11 @@ namespace WelcomeMVCApp.Controllers
         [HttpGet]
         public ActionResult Edit(int rollno)
         {
+            bool isloggedin = Convert.ToBoolean(Session["Isloggedin"]);
+            if (!isloggedin)
+            {
+                return RedirectToAction("Index", "Login");
+            }
             EditViewModel vm = new EditViewModel();
             var student = _service.GetStudentByRollno(rollno);
             if (student != null) {
@@ -81,6 +90,11 @@ namespace WelcomeMVCApp.Controllers
         }
 
         public ActionResult Delete(int rollno) {
+            bool isloggedin = Convert.ToBoolean(Session["Isloggedin"]);
+            if (!isloggedin)
+            {
+                return RedirectToAction("Index", "Login");
+            }
             Student student = _service.GetStudentByRollno(rollno);
             if (student != null)
             {

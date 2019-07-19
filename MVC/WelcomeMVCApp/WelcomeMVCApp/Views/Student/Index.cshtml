@@ -20,7 +20,8 @@
             List<Student> studentlist = new List<Student>();
             studentlist=(List<Student>)ViewData["StudentList"];
          }
-        <p style="background-color:aqua">@Html.ActionLink("Register","Add","Student")</p>
+        <p style="background-color:aqua">@Html.ActionLink("Register","Add","Student")
+        &nbsp; @Html.ActionLink("Logout","Logout","Login")</p>
         <h4 class="jumbotron h4 text-center">TotalCount:@Model.Count</h4>
         <div>
             <table border="1" class="table">

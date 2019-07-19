@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+@using EmployeeMVCApp.Models.Department;
+@using EmployeeMVCApp.Services
+@model IndexViewModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body class="jumbotron container">
+    <div>
+        <div class="jumbotron container">
+            <p class="text-center">Department App</p>
+            @using(Html.BeginForm(FormMethod.Post)){ 
+            <p class="text-center">Department Wise Filter:@Html.DropDownListFor((model)=>model.SelectedDepartment,
+                                                         new SelectList(Enum.GetValues(typeof(Departments))),"Select Deaprtment")</p>
+            <p class="text-center"><input type="submit" value="Filter" /></p>
+            }
+        </div> 
+        <div class="jumbotron container">
+            <p class="text-center">Employee List</p>
+            <table class="table">
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Job</td>
+                    <td>Manager ID</td>
+                    <td>Hiredate</td>
+                    <td>Salary</td>
+                    <td>Comission</td>
+                    <td>Department ID</td>
+                </tr>
+                @foreach (var emp in Model.FilterList)
+                {
+                <tr>
+                    <td>@emp.Empno</td>
+                    <td>@emp.Ename</td>
+                    <td>@emp.Job</td>
+                    <td>@emp.MGR</td>
+                    <td>@emp.Hiredate</td>
+                    <td>@emp.Salary</td>
+                    <td>@emp.Commission</td>
+                    <td>@emp.DeptNo</td>
+                </tr>                
+                }
+            </table>
+        </div>
+    </div>
+</body>
+</html>

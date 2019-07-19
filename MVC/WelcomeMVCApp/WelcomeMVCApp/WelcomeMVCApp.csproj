@@ -122,6 +122,7 @@
     <Compile Include="BusinessModel\Student.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -129,11 +130,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Login\IndexViewModel.cs" />
     <Compile Include="Models\Registration\IndexViewModel.cs" />
     <Compile Include="Models\Student\AddViewModel.cs" />
     <Compile Include="Models\Student\EditViewModel.cs" />
     <Compile Include="Models\Student\IndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\StudentServices.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +149,7 @@
     <Content Include="Views\Session\Index.cshtml" />
     <Content Include="Views\Application\Index.cshtml" />
     <Content Include="Views\Summary\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

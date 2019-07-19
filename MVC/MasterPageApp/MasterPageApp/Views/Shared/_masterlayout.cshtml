@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_masterlayout</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div>
+        <div class="container">
+            <p> &nbsp;@Html.ActionLink("Index","Index","Home") &nbsp; 
+            @Html.ActionLink("About","About","Home")&nbsp;
+            @Html.ActionLink("Carrer","Carrer","Home")</p>
+        </div> 
+        <div class="container">
+            <section>
+                @RenderBody()
+            </section>
+        </div>
+    </div>
+    <footer class="modal-footer ">
+        <p class="text-center">Swabhav Techlabs Solutions</p>
+    </footer>
+</body>
+</html>

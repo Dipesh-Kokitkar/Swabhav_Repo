@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+@using DepartmentMVCApp.Models.Login;
+@model IndexViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <p class="text-center">Login</p>
+    <div class="container">
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <p>Username:@Html.TextBoxFor((model) => model.Username)@Html.ValidationMessageFor((model) => model.Username)</p>
+            <p>Password:@Html.PasswordFor((model)=>model.Password)@Html.ValidationMessageFor((model) => model.Password)</p>
+            <input type="submit" value="Submit" />
+        }
+    </div>
+</body>
+</html>

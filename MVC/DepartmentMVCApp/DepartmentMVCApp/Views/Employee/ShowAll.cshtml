@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+    int num = 0;
+}
+@using DepartmentMVCApp.Models.Employee
+@model ShowAllViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowAll</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div class="container">
+        <h3>All Employess List</h3>
+        <div class="container">
+            <p class="text-center">Total Count:@Model.Count</p>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Comission</th>
+                    <th>Date of Join</th>
+                </tr>
+                @foreach (var Employee in Model.EmployeesList) {
+                    num++;
+                    <tr>
+                        <td>@num</td>
+                    </tr>
+                }
+            </table>
+        </div> 
+    </div>
+</body>
+</html>

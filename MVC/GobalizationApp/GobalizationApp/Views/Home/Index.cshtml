@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+@using GobalizationApp.Models.Home;
+@model IndexModelView
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div> 
+        <h3 class="text-center">Language Controller</h3>
+        <div class="container">
+            <p class="text-center">@Html.DropDownListFor((m)=>m.selectedLanguge,new SelectList(Model.langlist))</p>
+            <p class="text-center"><button onclick="location.href='@Url.Action("Index","Home",new { lang=Model.selectedLanguge})'">Submit</button></p>
+        </div>
+        <div>
+            <p class="text-center">@Model.Text</p>
+        </div>
+    </div>
+</body>
+</html>

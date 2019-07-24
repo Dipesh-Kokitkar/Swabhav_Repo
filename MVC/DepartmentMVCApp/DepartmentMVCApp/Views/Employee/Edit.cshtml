@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+@using DepartmentMVCApp.Models.Employee;
+@model EditViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div class="container">
+        <h4>Edit Employee Deatils</h4>
+        <div class="container">
+            @using (Html.BeginForm(FormMethod.Post)) {
+                <p>Name:@Html.TextBoxFor((model)=>model.Name)@Html.ValidationMessageFor((model)=>model.Name)</p>
+                <p>Salary:@Html.TextBoxFor((model) => model.Salary)@Html.ValidationMessageFor((model) => model.Salary)</p>
+                <p>Comission:@Html.TextBoxFor((model) => model.Comission)@Html.ValidationMessageFor((model) => model.Comission)</p>
+                <p>Date Of Joining:@Html.TextBoxFor((model) => model.DateofJoin)@Html.ValidationMessageFor((model) => model.DateofJoin)</p>
+                <input type="submit" value="Update"/>
+            }
+        </div> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+@using DepartmentMVCApp.Models.Deapartment;
+@model AddViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div>
+        <p class="text-center">New Department</p>
+        <div>
+            @using (Html.BeginForm(FormMethod.Post)) {
+                <p>Deapartment Name:@Html.TextBoxFor((model)=>model.Name)</p>
+                <p>Location:@Html.TextBoxFor((model)=>model.Location)</p>
+                <input type="submit" value="Submit"/>
+            }
+        </div> 
+    </div>
+</body>
+</html>

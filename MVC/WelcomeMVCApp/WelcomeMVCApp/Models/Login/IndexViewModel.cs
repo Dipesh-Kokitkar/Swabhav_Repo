@@ -11,7 +11,7 @@ namespace WelcomeMVCApp.Models.Login
         [Required(ErrorMessage ="Username required")]
         public string Username { set; get; }
 
-        [Required(ErrorMessage ="Password Required")]
+        [CustomPasswordValidator]
         public string Password { set; get; }
     }
 }

@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+    var num = 0;
+}
+@using DepartmentMVCApp.Models.Employee;
+@model IndexViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div>
+        <h3 class="text-center">Employee List</h3>
+        <p class="text-center">@Html.ActionLink("Add Employee","Add","Employee",new { Id=Model.Id},null)</p>
+        <div class="container">
+            <p class="text-center">Total Count:@Model.Count</p>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Comssion</th>
+                    <th>Date Of Joining</th>
+                    <th>Edit</th>
+                </tr>
+                @foreach (var emp in Model.EmployeeList) {
+                    num++;
+                    <tr>
+                        <td>@num</td>
+                        <td>@emp.EName</td>
+                        <td>@emp.Salary</td>
+                        <td>@emp.Comission</td>
+                        <td>@emp.DateOfJoin</td>
+                        <td>@Html.ActionLink("Edit","Edit","Employee",new { Id=emp.ID},null)</td>
+                    </tr>
+                }
+            </table>
+            <p>@Html.ActionLink("Go to Home","Index","Department")</p>
+        </div> 
+    </div>
+</body>
+</html>

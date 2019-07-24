@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+@using DepartmentMVCApp.Models.Deapartment;
+@model EditViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div>
+        <p class="text-center">Edit Department</p>
+        <div>
+            @using (Html.BeginForm(FormMethod.Post)) {
+                <p>Department Name:@Html.TextBoxFor((model)=>model.Name)@Html.ValidationMessageFor((model)=>model.Name)</p>
+                <p>Location:@Html.TextBoxFor((model) => model.Location)@Html.ValidationMessageFor((model) => model.Location)</p>
+                <input type="submit" value="Update"/>
+            }
+        </div> 
+    </div>
+</body>
+</html>

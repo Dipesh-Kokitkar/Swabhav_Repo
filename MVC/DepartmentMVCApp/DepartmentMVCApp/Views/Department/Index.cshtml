@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+    int num = 0;
+}
+@using DepartmentMVCApp.Models.Deapartment;
+@using DepartmentMVCApp.Resouces;
+@model IndexViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div>
+        <header class="page-header">
+            <p class="text-center">
+                @Resource.Header
+            </p>
+        </header>
+        <div class="container">
+            <p class="text-center">@Html.ActionLink("Add Department","Add","Department") &nbsp;
+            @Html.ActionLink("View All Employees","ShowAll","Employee") &nbsp;
+            @Html.ActionLink("Logout", "Logout", "Login")</p>
+        </div>
+        <div class="container">
+            <p class="text-center">Total Count:@Model.Count</p>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>Action</th>
+                </tr>
+                
+                @foreach (var department in Model.DepartmentList)
+                {
+                    num++;
+                    <tr>
+                        <td>@num</td>
+                        <td>@department.Dname</td>
+                        <td>@department.Location</td>
+                        <td>@Html.ActionLink("Edit", "Edit", "Department", new { Id=department.ID },null)</td>
+                        <td>@Html.ActionLink("Delete","Delete","Department")</td>
+                        <td>@Html.ActionLink("View Deatils","Index","Employee",new { ID=department.ID},null)</td>
+                    </tr>
+                }
+                </table>
+            </div>
+            <footer class="modal-footer">
+                <p class="text-center">@Resource.Footer</p>
+            </footer>
+        </div>
+    </body>
+</html>

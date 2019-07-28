@@ -10,5 +10,7 @@ namespace DepartmentMVCApp.Models.Employee
     {
         public List<BusinessModel.Employee> EmployeesList { get; set; }
         public int Count { get; set; }
+        public string SearchName { get; set; }
+        public int SkipNumber { get; set; }
     }
 }

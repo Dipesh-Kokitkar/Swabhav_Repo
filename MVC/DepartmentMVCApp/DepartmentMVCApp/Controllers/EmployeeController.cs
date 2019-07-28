@@ -81,9 +81,20 @@ namespace DepartmentMVCApp.Controllers
             return RedirectToAction("Index", "Employee", new { Id = id });
         }
 
-        public ActionResult ShowAll() {
+        [CustomLogger]
+        [HttpPost]
+        public ActionResult ShowAll(ShowAllViewModel showvm) {
+            showvm.EmployeesList = _service.SearchEmployee(showvm.SearchName);
+            showvm.Count = 1;
+            return View(showvm);
+        }
+
+        [CustomLogger]
+        [HttpGet]
+        public ActionResult ShowAll(int Skipnum) {
             ShowAllViewModel showvm = new ShowAllViewModel();
-            showvm.EmployeesList = _service.GetAllEmployees();
+            showvm.SkipNumber = Skipnum;
+            showvm.EmployeesList = _service.GetAllEmployees(Skipnum);
             showvm.Count = _service.GetTotalEmployeeCount();
             return View(showvm);
         }

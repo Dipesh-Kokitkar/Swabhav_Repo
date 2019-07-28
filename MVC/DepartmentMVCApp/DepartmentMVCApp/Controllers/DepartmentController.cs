@@ -11,10 +11,10 @@ namespace DepartmentMVCApp.Controllers
 {
     public class DepartmentController : Controller
     {
-        private DepartmentService _service;
-        public DepartmentController()
+        private IDepartmentService _service;
+        public DepartmentController(IDepartmentService service)
         {
-            _service = new DepartmentService();
+            _service = service;
         }
         // GET: Department
         [CustomLogger]

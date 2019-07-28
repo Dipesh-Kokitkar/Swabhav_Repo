@@ -23,7 +23,7 @@
         </header>
         <div class="container">
             <p class="text-center">@Html.ActionLink("Add Department","Add","Department") &nbsp;
-            @Html.ActionLink("View All Employees","ShowAll","Employee") &nbsp;
+            @Html.ActionLink("View All Employees","ShowAll","Employee",new { Skipnum = 0 },null) &nbsp;
             @Html.ActionLink("Logout", "Logout", "Login")</p>
         </div>
         <div class="container">

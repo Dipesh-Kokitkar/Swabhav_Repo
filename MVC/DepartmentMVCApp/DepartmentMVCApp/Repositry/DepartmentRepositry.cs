@@ -6,7 +6,7 @@ using DepartmentMVCApp.BusinessModel;
 
 namespace DepartmentMVCApp.Repositry
 {
-    public class DepartmentRepositry
+    public class DepartmentRepositry : IDepartmentRepositry
     {
         private AurionProEFDBContext _context;
 
@@ -71,8 +71,23 @@ namespace DepartmentMVCApp.Repositry
             return _context.Employees.Find(id);
         }
 
-        public List<Employee> GetAllEmployees() {
-            return _context.Employees.ToList();
+        public List<Employee> GetAllEmployees(int num) {
+            if (num == 0) {
+                return _context.Employees.OrderBy((emp) => emp.EName).Take(2).ToList();
+            }
+           return _context.Employees.OrderBy((emp)=>emp.EName).Skip(num).Take(2).ToList();
+           // return _context.Employees.ToList();
+
+        }
+
+        public List<Employee> SearchEmployee(string name) {
+            List<Employee> SearchResult = new List<Employee>();
+            foreach (Employee emp in _context.Employees) {
+                if (emp.EName.Equals(name)) {
+                    SearchResult.Add(emp);
+                }
+            }
+            return SearchResult;
         }
 
         public int GetTotalEmployeeCount() {

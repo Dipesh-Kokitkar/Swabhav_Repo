@@ -45,8 +45,12 @@ namespace DepartmentMVCApp.Services
             return _repositry.GetTotalEmployeeCount();
         }
 
-        public List<Employee> GetAllEmployees() {
-            return _repositry.GetAllEmployees();
+        public List<Employee> SearchEmployee(string name) {
+            return _repositry.SearchEmployee(name);
+        }
+
+        public List<Employee> GetAllEmployees(int skipnum) {
+            return _repositry.GetAllEmployees(skipnum);
         }
 
         public void AddNewEmployee(Employee emp,Department dept) {

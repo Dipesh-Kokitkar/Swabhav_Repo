@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+@using TaskManagement.MVC.Models.SubTask;
+@model IndexViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div class="container">
+        <div><h1 class="text-center h1">Task Management</h1></div>
+        <div class="container">
+            <p class="text-center">@Html.ActionLink("Add New Subtask","Add","SubTask",new { Taskid=Model.TaskId},null)
+            </p>
+        </div> 
+        <div>
+            <p class="text-center">@Model.TaskName 's Subtasks</p>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Subtask Name</th>
+                    <th>SubTask Description</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                @foreach (var subtask in Model.SubtaskList) {
+                    <tr>
+                        <td>@subtask.Id</td>
+                        <td>@subtask.SubTaskName</td>
+                        <td>@subtask.SubTaskDescription</td>
+                        <td>@Html.ActionLink("Edit","Edit","SubTask",new { Subtaskid=subtask.Id,Taskid=Model.TaskId})</td>
+                        <td>@Html.ActionLink("Delete", "Delete", "SubTask", new { Subtaskid = subtask.Id, Taskid = Model.TaskId })</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</body>
+</html>

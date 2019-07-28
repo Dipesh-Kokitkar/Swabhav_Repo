@@ -7,7 +7,7 @@ using DepartmentMVCApp.BusinessModel;
 
 namespace DepartmentMVCApp.Services
 {
-    public class DepartmentService
+    public class DepartmentService : IDepartmentService
     {
         private DepartmentRepositry _repositry;
 

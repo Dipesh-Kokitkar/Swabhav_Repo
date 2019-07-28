@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+@using TaskManagement.MVC.Models.User;
+@model HomeViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div class="container">
+        <div><h1 class="text-center h1">Task Managment</h1></div>
+        <div class="container">
+            <p class="text-center">@Html.ActionLink("Add New Task","Add","Task") &nbsp;
+            @Html.ActionLink("Logout", "Logout", "User");
+            </p>
+        </div>
+        <div>
+            <p class="text-center">@Model.CurrentUser Task's</p>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>Task Name</th>
+                    <th>Task Description</th>
+                    <th>Task Creation Date</th>
+                    <th>Task Deadline</th>
+                    <th>Sub Tasks</th>
+                    <th>Edit</th>
+                    <td>Delete</td>
+                </tr>
+                @foreach (var task in Model.UserTaskList) {
+                    <tr>
+                        <td>@task.Id</td>
+                        <td>@task.TaskName</td>
+                        <td>@task.TaskDiscription</td>
+                        <td>@task.TaskCreationDate</td>
+                        <td>@task.TaskDeadline</td>
+                        <td>@Html.ActionLink("View Sub-Tasks","Index","SubTask",new { Id=task.Id,Task=task.TaskName},null)</td>
+                        <td>@Html.ActionLink("Edit","Edit","Task",new { TaskId=task.Id,UserId=Model.UserId},null)</td>
+                        <td>@Html.ActionLink("Delete","Delete","Task",new { Id=task.Id, UserId = Model.UserId })</td>
+                    </tr>
+                }
+            </table>
+        </div> 
+    </div>
+</body>
+</html>

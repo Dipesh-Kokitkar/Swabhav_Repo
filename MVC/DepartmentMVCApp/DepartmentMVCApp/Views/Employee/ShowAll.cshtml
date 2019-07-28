@@ -17,6 +17,13 @@
     <div class="container">
         <h3>All Employess List</h3>
         <div class="container">
+            @using (Html.BeginForm(FormMethod.Post))
+            {
+            <p class="text-center">Search By Name:@Html.TextBoxFor((model) => model.SearchName)</p>
+            <p class="text-center"><input type="submit" value="Search"/></p>
+            }
+        </div>
+        <div class="container">
             <p class="text-center">Total Count:@Model.Count</p>
             <table class="table">
                 <tr>
@@ -25,14 +32,24 @@
                     <th>Salary</th>
                     <th>Comission</th>
                     <th>Date of Join</th>
+                    <td>Department</td>
                 </tr>
-                @foreach (var Employee in Model.EmployeesList) {
+                @foreach (var employee in Model.EmployeesList) {
                     num++;
                     <tr>
                         <td>@num</td>
+                        <td>@employee.EName</td>
+                        <td>@employee.Salary</td>
+                        <td>@employee.Comission</td>
+                        <td>@employee.DateOfJoin</td>
+                        <td>@employee.Department.Dname</td>
                     </tr>
                 }
             </table>
+            <div>
+                <button style="float:left" onclick="location.href='@Url.Action("ShowAll","Employee",new { SkipNum=Model.SkipNumber-2})'">Previous</button>
+                <button style="float:right" onclick="location.href='@Url.Action("ShowAll","Employee",new { SkipNum=Model.SkipNumber+2})'">Next</button>
+            </div>
         </div> 
     </div>
 </body>

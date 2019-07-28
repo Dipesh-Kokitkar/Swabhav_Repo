@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+@using TaskManagement.MVC.Models.Task;
+@model AddViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div class="container">
+        <div>
+            <h1 class="text-center h1">Task Management</h1>
+        </div> 
+        <div>
+            <h4 class="text-center h4">New Task</h4>
+            @using (Html.BeginForm(FormMethod.Post)) {
+               
+                <p>Task Name:@Html.TextBoxFor((model)=>model.TaskName)@Html.ValidationMessageFor((model) => model.TaskName))</p>
+                <p>Task Description:@Html.TextBoxFor((model) => model.TaskDescription)@Html.ValidationMessageFor((model) => model.TaskDescription)</p>
+                <p>Task Deadline:@Html.TextBoxFor((model) => model.Deadline,new { placeholder="MM/DD/YYYY"})@Html.ValidationMessageFor((model) => model.Deadline)</p>
+                <input type="submit" value="Add"/>
+            }
+        </div>
+    </div>
+</body>
+</html>

@@ -4,17 +4,15 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace TaskManagement.MVC.Models.Task
+namespace TaskManagement.MVC.Models.SubTask
 {
     public class AddViewModel
     {
         [Required(ErrorMessage ="This can not be empty")]
-        public string TaskName { get; set; }
+        public string SubTaskName { get; set; }
         [Required(ErrorMessage = "This can not be empty")]
-        public string TaskDescription { get; set; }
-        [Required(ErrorMessage = "This can not be empty")]
-        public string Deadline { get; set; }
+        public string SubTaskDescription { get; set; }
 
-        public string Id { get; set; }
+        public string TaskId { get; set; }
     }
 }

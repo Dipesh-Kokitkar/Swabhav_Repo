@@ -11,7 +11,7 @@ namespace TaskManagement.Core.Repository
     public class TaskRespository
     {
 
-        public void AddNewTask(int id,UserTask task) {
+        public void AddNewTask(Guid id,UserTask task) {
             
             using (ISession session = Helper.OpenSession())
             using (ITransaction transaction=session.BeginTransaction())
@@ -24,13 +24,13 @@ namespace TaskManagement.Core.Repository
             }
         }
 
-        public string GetUsername(int id) {
+        public string GetUsername(Guid id) {
             using (ISession session = Helper.OpenSession()) {
                 return session.Get<User>(id).Username;
             }
         }
 
-        public void UpdateTask(int id, UserTask updated) {
+        public void UpdateTask(Guid id, UserTask updated) {
             using (ISession session = Helper.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
             {
@@ -45,7 +45,7 @@ namespace TaskManagement.Core.Repository
 
         }
 
-        public void DeleteTask(int id) {
+        public void DeleteTask(Guid id) {
             UserTask task = GetTaskById(id);
             using (ISession session = Helper.OpenSession())
             using (ITransaction transaction = session.BeginTransaction()) {
@@ -55,13 +55,13 @@ namespace TaskManagement.Core.Repository
 
         }
 
-        public UserTask GetTaskById(int id) {
+        public UserTask GetTaskById(Guid id) {
             using (ISession session = Helper.OpenSession()) {
                 return session.Get<UserTask>(id);
             }
         }
 
-        public UserSubTask GetSubTaskById(int id)
+        public UserSubTask GetSubTaskById(Guid id)
         {
             using (ISession session = Helper.OpenSession())
             {
@@ -77,7 +77,7 @@ namespace TaskManagement.Core.Repository
             return user.Tasks.ToList();
         }
 
-        public void AddNewSubTask(int id, UserSubTask subtask) {
+        public void AddNewSubTask(Guid id, UserSubTask subtask) {
             using (ISession session = Helper.OpenSession())
             using (ITransaction transaction = session.BeginTransaction()) {
 
@@ -91,7 +91,7 @@ namespace TaskManagement.Core.Repository
 
         }
 
-        public void UpdateSubTask(int id,UserSubTask updated) {
+        public void UpdateSubTask(Guid id,UserSubTask updated) {
             UserSubTask subtask = GetSubTaskById(id);
 
             subtask.SubTaskName = updated.SubTaskName;
@@ -104,7 +104,7 @@ namespace TaskManagement.Core.Repository
             }
         }
 
-        public void DeleteSubTask(int id) {
+        public void DeleteSubTask(Guid id) {
             UserSubTask subtask = GetSubTaskById(id);
 
             using (ISession session = Helper.OpenSession())

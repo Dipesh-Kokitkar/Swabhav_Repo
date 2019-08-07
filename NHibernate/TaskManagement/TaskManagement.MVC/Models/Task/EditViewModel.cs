@@ -15,7 +15,7 @@ namespace TaskManagement.MVC.Models.Task
         [Required(ErrorMessage = "This can not be empty")]
         public string Deadline { get; set; }
 
-        public int TaskId { get; set; }
-        public int UserId { get; set; }
+        public string TaskId { get; set; }
+        public string UserId { get; set; }
     }
 }

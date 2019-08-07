@@ -22,9 +22,9 @@ namespace TaskManagement.MVC.Controllers
         }
 
         [HttpGet]
-        public ActionResult Add(int id) {
+        public ActionResult Add(Guid id) {
             AddViewModel addvm = new AddViewModel();
-            addvm.Id = id;
+            addvm.Id = id.ToString();
             return View(addvm);
         }
 
@@ -32,28 +32,28 @@ namespace TaskManagement.MVC.Controllers
         public ActionResult Add(AddViewModel addvm) {
             if (ModelState.IsValid) {
                 var task = _service.ConvertVMTOTask(addvm.TaskName, addvm.TaskDescription, addvm.Deadline);
-                _service.AddNewTask(addvm.Id,task);
-                return RedirectToAction("Home","User",new { user=_service.GetUserName(addvm.Id)});
+                _service.AddNewTask(Guid.Parse(addvm.Id),task);
+                return RedirectToAction("Home","User",new { user=_service.GetUserName(Guid.Parse(addvm.Id)) });
             }
             return View(addvm);
         }
 
-        public ActionResult Delete(int taskid,int userid) {
+        public ActionResult Delete(Guid taskid,Guid userid) {
 
             _service.DeleteTask(taskid);
             return RedirectToAction("Home", "User", new { User = _service.GetUserName(userid) });
         }
 
         [HttpGet]
-        public ActionResult Edit(int taskid,int userid) {
+        public ActionResult Edit(Guid taskid,Guid userid) {
             var task=_service.GetTaskById(taskid);
             EditViewModel editvm = new EditViewModel();
             editvm.TaskName = task.TaskName;
             editvm.TaskDescription = task.TaskDiscription;
             editvm.Deadline =task.TaskDeadline.ToString();
 
-            editvm.TaskId = taskid;
-            editvm.UserId = userid;
+            editvm.TaskId = taskid.ToString();
+            editvm.UserId = userid.ToString();
             return View(editvm);
         }
 
@@ -61,8 +61,8 @@ namespace TaskManagement.MVC.Controllers
         public ActionResult Edit(EditViewModel editvm) {
             if (ModelState.IsValid) {
                 var task = _service.ConvertVMTOTask(editvm.TaskName, editvm.TaskDescription, editvm.Deadline);
-                _service.UpdateTask(editvm.TaskId, task);
-                return RedirectToAction("Home", "User", new { User = _service.GetUserName(editvm.UserId) });
+                _service.UpdateTask(Guid.Parse(editvm.TaskId), task);
+                return RedirectToAction("Home", "User", new { User = _service.GetUserName(Guid.Parse(editvm.TaskId)) });
             }
             return View(editvm);
         }

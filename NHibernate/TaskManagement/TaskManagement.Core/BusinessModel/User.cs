@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TaskManagement.Core.BusinessModel
 {
-    public class User
+    public class User:Entity
     {
-        public virtual int Id { get; set; }
+        //public virtual int Id { get; set; }
         public virtual string Username { get; set; }
         public virtual string Password { get; set; }
         public virtual double MobileNumber { get; set; }

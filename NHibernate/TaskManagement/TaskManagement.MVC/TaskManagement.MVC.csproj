@@ -122,6 +122,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SubTask\AddViewModel.cs" />
+    <Compile Include="Models\SubTask\EditViewModel.cs" />
     <Compile Include="Models\SubTask\IndexViewModel.cs" />
     <Compile Include="Models\Task\AddViewModel.cs" />
     <Compile Include="Models\Task\EditViewModel.cs" />
@@ -139,6 +141,8 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\SubTask\Index.cshtml" />
+    <Content Include="Views\SubTask\Add.cshtml" />
+    <Content Include="Views\SubTask\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

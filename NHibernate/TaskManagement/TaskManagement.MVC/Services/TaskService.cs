@@ -15,15 +15,15 @@ namespace TaskManagement.MVC.Services
             _respository = new TaskRespository();
         }
 
-        public string GetUserName(int id) {
+        public string GetUserName(Guid id) {
             return _respository.GetUsername(id);
         }
 
-        public UserTask GetTaskById(int id) {
+        public UserTask GetTaskById(Guid id) {
             return _respository.GetTaskById(id);
         }
 
-        public void AddNewTask(int id,UserTask task) {
+        public void AddNewTask(Guid id,UserTask task) {
             _respository.AddNewTask(id,task);
         }
 
@@ -51,11 +51,11 @@ namespace TaskManagement.MVC.Services
             return _respository.GetAllSubTasks(task);
         }
 
-        public void UpdateTask(int id,UserTask updated) {
+        public void UpdateTask(Guid id,UserTask updated) {
             _respository.UpdateTask(id,updated);
         }
 
-        public void DeleteTask(int id) {
+        public void DeleteTask(Guid id) {
             _respository.DeleteTask(id);
         }
     }

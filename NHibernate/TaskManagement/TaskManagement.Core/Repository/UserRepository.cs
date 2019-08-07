@@ -33,13 +33,13 @@ namespace TaskManagement.Core.Repository
             return null;
         }
 
-        public User GetUserById(int id)
+        public User GetUserById(Guid id)
         {
             using (ISession session = Helper.OpenSession())
                 return session.Get<User>(id);
         }
 
-        public List<UserTask> GetUserTasks(int id)
+        public List<UserTask> GetUserTasks(Guid id)
         {
             User user = GetUserById(id);
             using (ISession session = Helper.OpenSession())
@@ -61,7 +61,7 @@ namespace TaskManagement.Core.Repository
             }
         }
 
-        public void UpdateUserInfo(int id, User Updated)
+        public void UpdateUserInfo(Guid id, User Updated)
         {
             User user = GetUserById(id);
             using (ISession session = Helper.OpenSession())
@@ -76,7 +76,7 @@ namespace TaskManagement.Core.Repository
 
         }
 
-        public void DeleteUser(int id)
+        public void DeleteUser(Guid id)
         {
             User user = GetUserById(id);
             using (ISession session = Helper.OpenSession())

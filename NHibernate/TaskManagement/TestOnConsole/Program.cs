@@ -16,14 +16,14 @@ namespace TestOnConsole
             Console.WriteLine("Read");
             Console.ReadKey();
 
-            UserSubTask subtask = new UserSubTask { Id = 11, SubTaskName = "maths", SubTaskDescription = "Dp it" };
+            UserSubTask subtask = new UserSubTask { SubTaskName = "maths", SubTaskDescription = "Dp it" };
 
 
            
 
             UserTask task = new UserTask
             {
-                Id = 10,
+                
                 TaskName = "Homework",
                 TaskDiscription = "do it",
                 TaskCreationDate = DateTime.Parse("7/27/2019"),
@@ -32,7 +32,7 @@ namespace TestOnConsole
 
             User user = new User
             {
-                Id = 1,
+                
                 Username = "dipesh",
                 Password = "abc",
                 MobileNumber = 123,

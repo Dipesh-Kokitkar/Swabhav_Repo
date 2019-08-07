@@ -23,8 +23,8 @@ namespace TaskManagement.MVC.Services
             return _respository.GetUserByName(name);
         }
 
-        public User ConvertVMToUser(int id,string username,string password,string mobileno,string email) {
-            User user = new User { Id = id,
+        public User ConvertVMToUser(string username,string password,string mobileno,string email) {
+            User user = new User { 
                 Username = username,
                 Password = password,
                 MobileNumber = Convert.ToDouble(mobileno),

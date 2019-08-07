@@ -14,12 +14,32 @@ namespace TaskManagement.MVC.Services
             _respository = new TaskRespository();
         }
 
-        public UserTask GetTaskById(int id) {
+        public UserTask GetTaskById(Guid id) {
             return _respository.GetTaskById(id);
+        }
+
+        public UserSubTask GetSubTaskById(Guid id) {
+            return _respository.GetSubTaskById(id);
         }
 
         public List<UserSubTask> GetAllSubTask(UserTask task) {
             return _respository.GetAllSubTasks(task);
         }
+
+        public void AddSubTask(Guid id,UserSubTask subtask) {
+            _respository.AddNewSubTask(id, subtask);
+        }
+
+        public void EditSubTask(Guid id,UserSubTask updated) {
+            _respository.UpdateSubTask(id,updated);
+        }
+
+        public void DeleteSubTask(Guid id) {
+            _respository.DeleteSubTask(id);
+        }
+
+        public UserSubTask ConvertVMToSubtask(string name,string description) {
+            return new UserSubTask { SubTaskName = name, SubTaskDescription = description };
+        }
     }
-}
+} 

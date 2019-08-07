@@ -9,7 +9,7 @@ namespace TaskManagement.MVC.Models.User
     public class HomeViewModel
     {
         public string CurrentUser { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public List<UserTask> UserTaskList { get; set; }
     }
 }

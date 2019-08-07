@@ -40,7 +40,7 @@
                         <td>@task.TaskDiscription</td>
                         <td>@task.TaskCreationDate</td>
                         <td>@task.TaskDeadline</td>
-                        <td>@Html.ActionLink("View Sub-Tasks","Index","SubTask",new { Id=task.Id,Task=task.TaskName},null)</td>
+                        <td>@Html.ActionLink("View Sub-Tasks","Index","SubTask",new { Id=task.Id},null)</td>
                         <td>@Html.ActionLink("Edit","Edit","Task",new { TaskId=task.Id,UserId=Model.UserId},null)</td>
                         <td>@Html.ActionLink("Delete","Delete","Task",new { Id=task.Id, UserId = Model.UserId })</td>
                     </tr>

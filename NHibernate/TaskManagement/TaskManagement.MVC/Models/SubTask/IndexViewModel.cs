@@ -9,7 +9,7 @@ namespace TaskManagement.MVC.Models.SubTask
     public class IndexViewModel
     {
         public string TaskName { get; set; }
-        public int TaskId { get; set; }
+        public string TaskId { get; set; }
         public List<UserSubTask> SubtaskList { set; get; }
     }
 }

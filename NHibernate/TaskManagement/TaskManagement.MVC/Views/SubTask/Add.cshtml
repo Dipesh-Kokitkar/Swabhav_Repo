@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+@using TaskManagement.MVC.Models.SubTask;
+@model AddViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="jumbotron container">
+    <div class="container">
+        <div class="text-center"><h2 class="h2">Add New Subtask</h2></div>
+        <div>
+            @using (Html.BeginForm(FormMethod.Post)) {
+                <p>SubTask Name:@Html.TextBoxFor((model)=>model.SubTaskName)@Html.ValidationMessageFor((model)=>model.SubTaskName)</p>
+                <p>SubTask Description:@Html.TextBoxFor((model) => model.SubTaskDescription)@Html.ValidationMessageFor((model) => model.SubTaskDescription)</p>
+                <input type="submit" value="Add"/>
+            }
+        </div> 
+    </div>
+</body>
+</html>

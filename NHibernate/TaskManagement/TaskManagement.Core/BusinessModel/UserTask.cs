@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TaskManagement.Core.BusinessModel
 {
-    public class UserTask
+    public class UserTask:Entity
     {
-        public virtual int Id { get; set; }
+        //public virtual int Id { get; set; }
         public virtual string TaskName { get; set; }
         public virtual string TaskDiscription { get; set; }
         public virtual DateTime TaskCreationDate { get; set; }
